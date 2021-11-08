@@ -1,0 +1,7 @@
+D:\Programs Visual Studio\School2020-2021\1-100 while\bin\Debug\1-100 while.exe.config
+D:\Programs Visual Studio\School2020-2021\1-100 while\bin\Debug\1-100 while.exe
+D:\Programs Visual Studio\School2020-2021\1-100 while\bin\Debug\1-100 while.pdb
+D:\Programs Visual Studio\School2020-2021\1-100 while\obj\Debug\1-100 while.csprojAssemblyReference.cache
+D:\Programs Visual Studio\School2020-2021\1-100 while\obj\Debug\1-100 while.csproj.CoreCompileInputs.cache
+D:\Programs Visual Studio\School2020-2021\1-100 while\obj\Debug\1-100 while.exe
+D:\Programs Visual Studio\School2020-2021\1-100 while\obj\Debug\1-100 while.pdb

@@ -1,0 +1,6 @@
+D:\Programs Visual Studio\School2020-2021\Which-is-Number1-100\bin\Debug\Which-is-Number1-100.exe.config
+D:\Programs Visual Studio\School2020-2021\Which-is-Number1-100\bin\Debug\Which-is-Number1-100.exe
+D:\Programs Visual Studio\School2020-2021\Which-is-Number1-100\bin\Debug\Which-is-Number1-100.pdb
+D:\Programs Visual Studio\School2020-2021\Which-is-Number1-100\obj\Debug\Which-is-Number1-100.csproj.CoreCompileInputs.cache
+D:\Programs Visual Studio\School2020-2021\Which-is-Number1-100\obj\Debug\Which-is-Number1-100.exe
+D:\Programs Visual Studio\School2020-2021\Which-is-Number1-100\obj\Debug\Which-is-Number1-100.pdb

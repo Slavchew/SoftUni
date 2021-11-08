@@ -1,0 +1,7 @@
+D:\Programs Visual Studio\School2020-2021\PrimeNumbers\bin\Debug\PrimeNumbers.exe.config
+D:\Programs Visual Studio\School2020-2021\PrimeNumbers\bin\Debug\PrimeNumbers.exe
+D:\Programs Visual Studio\School2020-2021\PrimeNumbers\bin\Debug\PrimeNumbers.pdb
+D:\Programs Visual Studio\School2020-2021\PrimeNumbers\obj\Debug\PrimeNumbers.csprojAssemblyReference.cache
+D:\Programs Visual Studio\School2020-2021\PrimeNumbers\obj\Debug\PrimeNumbers.csproj.CoreCompileInputs.cache
+D:\Programs Visual Studio\School2020-2021\PrimeNumbers\obj\Debug\PrimeNumbers.exe
+D:\Programs Visual Studio\School2020-2021\PrimeNumbers\obj\Debug\PrimeNumbers.pdb
