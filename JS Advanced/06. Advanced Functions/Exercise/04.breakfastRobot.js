@@ -30,8 +30,6 @@ function solution() {
             } else {
                 remainingStorage[element] = remaining;
             }
-
-            //storage[element] -= recipes[recipe][element]; Try it
         }
         Object.assign(storage, remainingStorage);
 
