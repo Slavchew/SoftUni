@@ -88,12 +88,29 @@ END
 
 EXEC usp_EmployeesBySalaryLevel 'High'
 
--- Problem 8
+-- Problem 7
 GO
 
-CREATE FUNCTION ufn_IsWordComprised(@setOfLetters NVARCHAR(MAX), @word NVARCHAR(MAX))
+CREATE OR ALTER FUNCTION ufn_IsWordComprised(@setOfLetters NVARCHAR(MAX), @word NVARCHAR(MAX))
 RETURNS BIT
 AS
 BEGIN
-	DECLARE @Result	
+	DECLARE @Result BIT	= 1;
+	DECLARE @i INT = 1;
+
+	WHILE (@i <= LEN(@word))
+	BEGIN
+		IF CHARINDEX(SUBSTRING(@word,@i, 1),@setOfLetters) <= 0
+		BEGIN
+			SET @Result = 0;
+			RETURN @Result;
+		END
+
+		SET @i += 1
+	END
+	RETURN @Result;
 END
+
+SELECT [dbo].[ufn_IsWordComprised]('oistmiahf', 'halves')
+
+
