@@ -107,7 +107,7 @@ WHERE f.Id IS NULL
 ORDER BY Id, Name, Size DESC
 
 -- Problem 9
-SELECT r.Id ,r.Name, COUNT(*) AS Commits FROM Repositories r
+SELECT TOP(5) r.Id ,r.Name, COUNT(*) AS Commits FROM Repositories r
 LEFT JOIN Commits AS c ON c.RepositoryId = r.Id
 JOIN RepositoriesContributors AS rc ON rc.RepositoryId = r.Id
 GROUP BY r.Id, r.Name
