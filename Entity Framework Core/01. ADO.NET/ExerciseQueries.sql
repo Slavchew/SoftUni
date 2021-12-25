@@ -96,3 +96,65 @@ INSERT INTO MinionsVillains (MinionId, VillainId)
 VALUES 
 (4,2),(1,1),(5,7),(3,5),(2,6),(11,5),(8,4),(9,7),
 (7,1),(1,3),(7,3),(5,3),(4,3),(1,2),(2,1),(2,7)
+
+
+-- Problem 2
+SELECT v.Name, COUNT(m.ID) AS Count FROM Villains v
+JOIN MinionsVillains mv ON mv.VillainId = v.Id
+JOIN Minions m ON mv.MinionId = m.Id
+GROUP BY v.Name
+HAVING COUNT(m.Id) > 3
+ORDER BY COUNT(m.ID) DESC
+
+-- Problem 3
+SELECT Name FROM Villains
+WHERE Id = @Id
+
+SELECT ROW_NUMBER() OVER (ORDER BY m.Name) AS RowNumber,
+m.Name, m.Age FROM Villains v
+JOIN MinionsVillains mv ON mv.VillainId = v.Id
+JOIN Minions m ON mv.MinionId = m.Id
+WHERE v.Id = @Id
+ORDER BY m.Name
+
+
+-- Problem 4
+SELECT Id FROM Towns
+WHERE Name = @townName
+
+INSERT INTO Towns(Name, CountryCode)
+VALUES
+(@townName, 1)
+
+SELECT Id FROM Villains
+WHERE Name = @villainName
+
+INSERT INTO Villains(Name, EvilnessFactorId)
+VALUES
+(@villainName, 4)
+
+SELECT Id FROM EvilnessFactors
+WHERE Name = 'Evil'
+
+INSERT INTO Minions(Name, Age, TownId)
+VALUES
+(@minionName, @minionAge, @townId)
+
+SELECT Id FROM Minions
+WHERE Name = @minionName
+
+INSERT INTO MinionsVillains(MinionId, VillainId)
+VALUES
+(@minionId, @villainId)
+
+-- Problem 5
+
+SELECT Id FROM Countries
+WHERE Name = @countryName
+
+UPDATE Towns
+SET Name = UPPER(Name)
+WHERE CountryCode = @countryId
+
+SELECT Name FROM Towns
+WHERE CountryCode = 1
