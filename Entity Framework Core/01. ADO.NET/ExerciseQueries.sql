@@ -158,3 +158,22 @@ WHERE CountryCode = @countryId
 
 SELECT Name FROM Towns
 WHERE CountryCode = 1
+
+
+-- Problem 6
+SELECT Name FROM Villains
+WHERE Id = @villainId
+
+DELETE FROM Villains
+WHERE Id = @villainId
+
+DELETE FROM MinionsVillains
+WHERE VillainId = 9
+
+
+-- Problem 7
+
+SELECT Name, Age FROM Minions
+WHERE Id = @id
+
+-- 
