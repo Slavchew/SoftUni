@@ -15,20 +15,54 @@ namespace P08.IncreaseMinionAge
             int[] minionsIds = Console.ReadLine()
                 .Split(" ").Select(int.Parse).ToArray();
 
-            string getMinionNamesQuery =
-            @"SELECT Name, Age FROM Minions
+            SetAllMinionsNameToLowerCase(sqlConnection);
+
+            IncrementMinionsAgeByIdAndMakeNameInTitleCase(sqlConnection, minionsIds);
+
+            PrintAllMinionsNameAndAge(sqlConnection);
+        }
+
+        private static void PrintAllMinionsNameAndAge(SqlConnection sqlConnection)
+        {
+            string getAllMinionsNameAndAgeQuery =
+            @"SELECT Name, Age FROM Minions";
+            using SqlCommand getAllMinionsNameAndAgeCmd = new SqlCommand(getAllMinionsNameAndAgeQuery, sqlConnection);
+            using SqlDataReader reader = getAllMinionsNameAndAgeCmd.ExecuteReader();
+            while (reader.Read())
+            {
+                string minionName = (string)reader["Name"];
+                int minionAge = (int)reader["Age"];
+                Console.WriteLine($"{minionName} {minionAge}");
+            }
+        }
+
+        private static void SetAllMinionsNameToLowerCase(SqlConnection sqlConnection)
+        {
+            string setAllMinionsNameToLowerCaseQuery =
+            @"UPDATE Minions
+            SET Name = LOWER(Name)";
+
+            using SqlCommand setAllMinionsNameToLowerCaseCmd = new SqlCommand(setAllMinionsNameToLowerCaseQuery, sqlConnection);
+            setAllMinionsNameToLowerCaseCmd.ExecuteNonQuery();
+        }
+
+        private static void IncrementMinionsAgeByIdAndMakeNameInTitleCase(SqlConnection sqlConnection, int[] minionsIds)
+        {
+            string incrementMinionsAgeByIdAndMakeNameInTitleCaseQuery =
+            @"UPDATE Minions
+            SET Age += 1, Name = UPPER(LEFT(Name, 1)) + SUBSTRING(Name, 2, LEN(Name) - 1)
             WHERE Id = @id";
 
-            using SqlCommand getMinionNamesCmd = new SqlCommand(getMinionNamesQuery, sqlConnection);
+            using SqlCommand incrementMinionsAgeByIdAndMakeNameInTitleCaseCmd = 
+                new SqlCommand(incrementMinionsAgeByIdAndMakeNameInTitleCaseQuery, sqlConnection);
 
             foreach (var id in minionsIds)
             {
-                getMinionNamesCmd.Parameters.AddWithValue("@id", id);
+                incrementMinionsAgeByIdAndMakeNameInTitleCaseCmd.Parameters.AddWithValue("@id", id);
 
-                using SqlDataReader reader = getMinionNamesCmd.ExecuteReader();
-                reader.Read();
-                string name = (string)reader["Name"];
-                int age = (int)reader["Age"];
+                incrementMinionsAgeByIdAndMakeNameInTitleCaseCmd.ExecuteNonQuery();
+
+                incrementMinionsAgeByIdAndMakeNameInTitleCaseCmd.Parameters.RemoveAt(0);
             }
         }
     }
