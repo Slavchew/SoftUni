@@ -176,4 +176,29 @@ WHERE VillainId = 9
 SELECT Name, Age FROM Minions
 WHERE Id = @id
 
--- 
+-- Problem 8
+UPDATE Minions
+SET Age += 1, Name = UPPER(LEFT(Name, 1)) + SUBSTRING(Name, 2, LEN(Name) - 1)
+WHERE Id = 1
+
+UPDATE Minions
+SET Name = LOWER(Name)
+WHERE Id = 1
+
+SELECT Name, Age FROM Minions
+
+-- Problem 9
+GO
+
+CREATE PROC usp_GetOlder(@minionID INT)
+AS
+BEGIN
+	UPDATE Minions
+	SET Age += 1
+	WHERE Id = @minionID
+END
+
+EXEC usp_GetOlder 2
+
+SELECT Name, Age FROM Minions
+WHERE Id = @minionID
