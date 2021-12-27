@@ -151,7 +151,7 @@ namespace MiniORM
                 Type dbSetType = dbSetProperty.Key;
 
                 MethodInfo mapRelationsGeneric = typeof(DbContext)
-                    .GetMethod("MapRelation", BindingFlags.Instance | BindingFlags.NonPublic)
+                    .GetMethod("MapRelations", BindingFlags.Instance | BindingFlags.NonPublic)
                     .MakeGenericMethod(dbSetType);
 
                 object dbSet = dbSetProperty.Value.GetValue(this);
