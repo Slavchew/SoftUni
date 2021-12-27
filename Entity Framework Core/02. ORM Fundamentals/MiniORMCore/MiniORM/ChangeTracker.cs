@@ -94,7 +94,7 @@ namespace MiniORM
 
                 foreach (PropertyInfo property in propertiesToClone)
                 {
-                    object value = property.GetValue(entities);
+                    object value = property.GetValue(entity);
                     property.SetValue(clonedEntity, value);
                 }
 
