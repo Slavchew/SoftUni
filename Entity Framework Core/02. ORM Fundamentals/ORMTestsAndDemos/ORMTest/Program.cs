@@ -9,17 +9,18 @@ namespace ORMTest
         public static void Main(string[] args)
         {
             SoftUniContext dbContext = new SoftUniContext();
-            var employees = dbContext.Employees.Where(x => x.Department.Manager.Department.Name == "Sales")
+            var employeesGroups = dbContext.Employees
+                .GroupBy(x => x.Department.Name)
+                .Where(x => x.Count() > 8)
                 .Select(x => new
                 {
-                    Name = x.FirstName + " " + x.LastName,
-                    DepartmentName = x.Department.Name,
-                    Manager = x.Manager.FirstName + " " + x.Manager.LastName
+                    DepartmentName = x.Key,
+                    CountEmployees = x.Count()
                 });
 
-            foreach (var employee in employees)
+            foreach (var employeesGroup in employeesGroups)
             {
-                Console.WriteLine(employee.Name + " => " + employee.DepartmentName + " => " + employee.Manager);
+                Console.WriteLine(employeesGroup.DepartmentName + " => " + employeesGroup.CountEmployees);
             }
         }
     }
