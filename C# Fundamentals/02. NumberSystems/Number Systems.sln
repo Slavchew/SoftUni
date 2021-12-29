@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Switching between number systems", "Switching between number systems\01.Switching between number systems.csproj", "{FD36C8A6-89F7-45FA-BA9A-3352EA715C79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.TheSmallestAndLargestP-thNumber", "TheSmallestAndLargestP-thNumber\02.TheSmallestAndLargestP-thNumber.csproj", "{69CB5D85-4974-45B1-92F8-6A77904FD61D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Derivation of numbers from a binary number", "Derivation of numbers from a binary number\03.Derivation of numbers from a binary number.csproj", "{3CD15C79-ECAE-4310-9E10-6AD1801184D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.Number of two-digit numbers in a number system", "Number of two-digit numbers in a number system\04.Number of two-digit numbers in a number system.csproj", "{5C426818-0454-4040-887F-5402F355FA86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.BinaryArithmetic", "BinaryArithmetic\05.BinaryArithmetic.csproj", "{16E00E95-384B-4C64-8183-5C94A68ABA5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD36C8A6-89F7-45FA-BA9A-3352EA715C79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD36C8A6-89F7-45FA-BA9A-3352EA715C79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD36C8A6-89F7-45FA-BA9A-3352EA715C79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD36C8A6-89F7-45FA-BA9A-3352EA715C79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69CB5D85-4974-45B1-92F8-6A77904FD61D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69CB5D85-4974-45B1-92F8-6A77904FD61D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69CB5D85-4974-45B1-92F8-6A77904FD61D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69CB5D85-4974-45B1-92F8-6A77904FD61D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD15C79-ECAE-4310-9E10-6AD1801184D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD15C79-ECAE-4310-9E10-6AD1801184D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD15C79-ECAE-4310-9E10-6AD1801184D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD15C79-ECAE-4310-9E10-6AD1801184D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C426818-0454-4040-887F-5402F355FA86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C426818-0454-4040-887F-5402F355FA86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C426818-0454-4040-887F-5402F355FA86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C426818-0454-4040-887F-5402F355FA86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16E00E95-384B-4C64-8183-5C94A68ABA5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16E00E95-384B-4C64-8183-5C94A68ABA5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16E00E95-384B-4C64-8183-5C94A68ABA5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16E00E95-384B-4C64-8183-5C94A68ABA5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AAEB4B27-7FAE-4792-8E8A-A5BE6CD7BF0E}
+	EndGlobalSection
+EndGlobal
