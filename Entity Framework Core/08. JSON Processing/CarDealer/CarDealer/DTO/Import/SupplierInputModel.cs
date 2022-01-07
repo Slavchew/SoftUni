@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CarDealer.DTO
+namespace CarDealer.DTO.Import
 {
     public class SupplierInputModel
     {

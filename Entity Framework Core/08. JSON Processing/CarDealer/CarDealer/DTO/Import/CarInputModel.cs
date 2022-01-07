@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace CarDealer.DTO
+namespace CarDealer.DTO.Import
 {
     public class CarInputModel
     {

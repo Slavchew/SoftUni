@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CarDealer.DTO
+namespace CarDealer.DTO.Import
 {
     public class CustomerInputModel
     {

@@ -1,4 +1,4 @@
-﻿namespace CarDealer.DTO
+﻿namespace CarDealer.DTO.Import
 {
     public class SaleInputModel
     {
