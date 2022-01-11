@@ -16,5 +16,10 @@ namespace PetStore.Models
 
         [Range(0, int.MaxValue)]
         public int Quantity { get; set; }
+
+        [Required]
+        public string OrderId { get; set; }
+
+        public virtual Order Order { get; set; }
     }
 }
