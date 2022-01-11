@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PetStore.Common;
 using PetStore.Models;
+using System.Reflection;
 
 namespace PetStore.Data
 {
@@ -42,10 +43,7 @@ namespace PetStore.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ClientProduct>(entity =>
-            {
-                entity.HasKey(x => new { x.ClientId, x.ProductId });
-            });
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(PetStoreDbContext).Assembly);
         }
     }
 }

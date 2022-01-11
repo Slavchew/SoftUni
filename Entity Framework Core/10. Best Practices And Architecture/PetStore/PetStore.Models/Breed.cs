@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
+using PetStore.Common;
+
 namespace PetStore.Models
 {
     public class Breed
@@ -11,11 +13,11 @@ namespace PetStore.Models
         }
 
         [Key]
-        [MinLength(3)]
-        [MaxLength(100)]
         public int Id { get; set; }
 
         [Required]
+        [MinLength(GlobalConstants.BreedNameMinLength)]
+        [MaxLength(GlobalConstants.BreedNameMaxLength)]
         public string Name { get; set; }
 
         public virtual ICollection<Pet> Pets { get; set; }

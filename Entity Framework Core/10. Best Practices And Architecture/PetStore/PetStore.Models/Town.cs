@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using PetStore.Common;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace PetStore.Models
@@ -14,6 +15,8 @@ namespace PetStore.Models
         public int Id { get; set; }
 
         [Required]
+        [MinLength(GlobalConstants.TownNameMinLength)]
+        [MaxLength(GlobalConstants.TownNameMaxLength)]
         public string Name { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }

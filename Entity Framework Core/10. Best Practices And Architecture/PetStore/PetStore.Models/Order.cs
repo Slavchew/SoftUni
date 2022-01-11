@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
+using System.ComponentModel.DataAnnotations.Schema;
+
+using PetStore.Common;
 
 namespace PetStore.Models
 {
@@ -22,12 +25,15 @@ namespace PetStore.Models
         public virtual Town Town { get; set; }
 
         [Required]
+        [MinLength(GlobalConstants.AddressMinLength)]
+        [MaxLength(GlobalConstants.AddressMaxLength)]
         public string Address { get; set; }
 
         public string Node { get; set; }
 
         public virtual ICollection<ClientProduct> ClientProducts { get; set; }
 
+        [NotMapped]
         public decimal TotalPrice => this.ClientProducts.Sum(cp => cp.Product.Price * cp.Quantity);
     }
 }
