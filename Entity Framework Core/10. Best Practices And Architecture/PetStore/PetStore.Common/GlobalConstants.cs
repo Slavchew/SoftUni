@@ -29,6 +29,5 @@
         // Product
         public const int ProductNameMinLength = 3;
         public const int ProductNameMaxLength = 150;
-
     }
 }
