@@ -10,7 +10,7 @@ namespace RealEstates.Services
 {
     public class DistrictService : IDistrictService
     {
-        private RealEstateDbContext db;
+        private readonly RealEstateDbContext db;
         public DistrictService(RealEstateDbContext db)
         {
             this.db = db;
@@ -18,7 +18,7 @@ namespace RealEstates.Services
 
         public IEnumerable<DistrictViewModel> GetTopDistrictsByAveragePrice(int count = 10)
         {
-            return db.Districts
+            return this.db.Districts
                 .OrderByDescending(x => x.Properties.Average(x => (double)x.Price / x.Size))
                 .Select(MapToDistrictViewModel())
                 .Take(count)
@@ -27,7 +27,7 @@ namespace RealEstates.Services
 
         public IEnumerable<DistrictViewModel> GetTopDistrictsByNumberOfProperties(int count = 10)
         {
-            return db.Districts
+            return this.db.Districts
                 .OrderByDescending(x => x.Properties.Count())
                 .Select(MapToDistrictViewModel())
                 .Take(count)
