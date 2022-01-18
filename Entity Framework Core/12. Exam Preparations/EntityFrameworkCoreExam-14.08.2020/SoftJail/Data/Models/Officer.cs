@@ -8,6 +8,11 @@ namespace SoftJail.Data.Models
 {
     public class Officer
     {
+        public Officer()
+        {
+            this.OfficerPrisoners = new HashSet<OfficerPrisoner>();
+        }
+
         public int Id { get; set; }
 
         [Required]

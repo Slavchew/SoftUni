@@ -6,6 +6,11 @@ namespace SoftJail.Data.Models
 {
     public class Cell
     {
+        public Cell()
+        {
+            this.Prisoners = new HashSet<Prisoner>();
+        }
+
         public int Id { get; set; }
 
         public int CellNumber { get; set; }

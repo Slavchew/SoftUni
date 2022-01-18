@@ -6,6 +6,12 @@ namespace SoftJail.Data.Models
 {
     public class Prisoner
     {
+        public Prisoner()
+        {
+            this.Mails = new HashSet<Mail>();
+            this.PrisonerOfficers = new HashSet<OfficerPrisoner>();
+        }
+
         public int Id { get; set; }
 
         [Required]
