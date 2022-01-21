@@ -7,6 +7,6 @@ namespace VaporStore.Data.Models.Enums
     public enum CardType
     {
         Debit = 1,
-        Card = 2
+        Credit = 2
     }
 }
