@@ -13,6 +13,7 @@
             this.Value = value;
             this.Parent = null;
             this.children = new List<Tree<T>>();
+            this.IsRootDeleted = false;
         }
 
         public Tree(T value, params Tree<T>[] children)
@@ -112,49 +113,43 @@
 
         public void Swap(T firstKey, T secondKey)
         {
-            var firstNode = FindBfs(firstKey);
+            Tree<T> firstNode = FindBfs(firstKey);
+            Tree<T> secondNode = FindBfs(secondKey);
             CheckEmptyNode(firstNode);
-
-            var secondNode = FindBfs(secondKey);
             CheckEmptyNode(secondNode);
 
-            var firstParent = firstNode.Parent;
-            var secondParent = secondNode.Parent;
+            Tree<T> firstParent = firstNode.Parent;
+            Tree<T> secondParent = secondNode.Parent;
 
-            int indexOfFirst;
-            int indexOfSecond;
             if (firstParent == null)
             {
-                firstNode.Value = secondNode.Value;
-                firstNode.children.Clear();
-                foreach (var child in secondNode.Children)
-                {
-                    firstNode.children.Add(child);
-                }
-
-
-            }
-            else
-            {
-                firstNode.Parent = secondParent;
-                indexOfFirst = firstParent.children.IndexOf(firstNode);
-                firstParent.children[indexOfFirst] = secondNode;
+                SwapRoot(secondNode);
+                return;
             }
             
             if (secondParent == null)
             {
-                secondNode.Value = firstNode.Value;
-                secondNode.children.Clear();
-                foreach (var child in firstNode.Children)
-                {
-                    secondNode.children.Add(child);
-                }
+                SwapRoot(firstNode);
+                return;
             }
-            else
+
+            firstNode.Parent = secondParent;
+            secondNode.Parent = firstParent;
+
+            int indexOfFirst = firstParent.children.IndexOf(firstNode);
+            int indexOfSecond = secondParent.children.IndexOf(secondNode);
+
+            firstParent.children[indexOfFirst] = secondNode;
+            secondParent.children[indexOfSecond] = firstNode;
+        }
+
+        private void SwapRoot(Tree<T> subtree)
+        {
+            this.Value = subtree.Value;
+            this.children.Clear();
+            foreach (var child in subtree.children)
             {
-                secondNode.Parent = firstParent;
-                indexOfSecond = secondParent.children.IndexOf(secondNode);
-                secondParent.children[indexOfSecond] = firstNode;
+                this.children.Add(child);
             }
         }
 
@@ -185,6 +180,27 @@
             {
                 throw new ArgumentNullException(nameof(node));
             }
+        }
+
+        private ICollection<T> DfsWithStack()
+        {
+            var result = new Stack<T>();
+            var toTraverse = new Stack<Tree<T>>();
+
+            toTraverse.Push(this);
+            while (toTraverse.Count != 0)
+            {
+                var current = toTraverse.Pop();
+
+                foreach (var child in current.Children)
+                {
+                    toTraverse.Push(child);
+                }
+
+                result.Push(current.Value);
+            }
+
+            return new List<T>(result);
         }
     }
 }
