@@ -9,13 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetStore.Data", "PetStore.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetStore.Common", "PetStore.Common\PetStore.Common.csproj", "{37B98855-11C2-40D5-88E2-1DD07A9343B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStore.ConsoleApplication", "PetStore.ConsoleApplication\PetStore.ConsoleApplication.csproj", "{8D056572-F853-4F24-A0FD-3773A6274804}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetStore.ConsoleApplication", "PetStore.ConsoleApplication\PetStore.ConsoleApplication.csproj", "{8D056572-F853-4F24-A0FD-3773A6274804}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStore.Services", "PetStore.Services\PetStore.Services.csproj", "{51480A94-DCB4-4C69-BEFC-D9543750788B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetStore.Services", "PetStore.Services\PetStore.Services.csproj", "{51480A94-DCB4-4C69-BEFC-D9543750788B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStore.ServiceModels", "PetStore.ServiceModels\PetStore.ServiceModels.csproj", "{63D604ED-625E-4D53-95FF-703C0F7A8A15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetStore.ServiceModels", "PetStore.ServiceModels\PetStore.ServiceModels.csproj", "{63D604ED-625E-4D53-95FF-703C0F7A8A15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStore.Mapping", "PetStore.Mapping\PetStore.Mapping.csproj", "{522CC2AD-0641-458B-B3AC-CF77BAC6F2D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetStore.Mapping", "PetStore.Mapping\PetStore.Mapping.csproj", "{522CC2AD-0641-458B-B3AC-CF77BAC6F2D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStore.Web", "PetStore.Web\PetStore.Web.csproj", "{03175414-3822-4494-A1BE-03561377A9A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{522CC2AD-0641-458B-B3AC-CF77BAC6F2D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{522CC2AD-0641-458B-B3AC-CF77BAC6F2D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{522CC2AD-0641-458B-B3AC-CF77BAC6F2D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03175414-3822-4494-A1BE-03561377A9A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03175414-3822-4494-A1BE-03561377A9A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03175414-3822-4494-A1BE-03561377A9A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03175414-3822-4494-A1BE-03561377A9A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
