@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01.ConnectedComponents", "P01.ConnectedComponents\P01.ConnectedComponents.csproj", "{B574B96B-D483-4B4B-BC7E-6C801CFD417E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01.ConnectedComponents", "P01.ConnectedComponents\P01.ConnectedComponents.csproj", "{B574B96B-D483-4B4B-BC7E-6C801CFD417E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02.TopologicalSorting", "P02.TopologicalSorting\P02.TopologicalSorting.csproj", "{55A967C9-2E9E-488B-9704-907E3EC26A07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03.ShortestPath", "P03.ShortestPath\P03.ShortestPath.csproj", "{56AE00E2-95C4-47CA-8383-0774400EDFD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{B574B96B-D483-4B4B-BC7E-6C801CFD417E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B574B96B-D483-4B4B-BC7E-6C801CFD417E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B574B96B-D483-4B4B-BC7E-6C801CFD417E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55A967C9-2E9E-488B-9704-907E3EC26A07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A967C9-2E9E-488B-9704-907E3EC26A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A967C9-2E9E-488B-9704-907E3EC26A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A967C9-2E9E-488B-9704-907E3EC26A07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56AE00E2-95C4-47CA-8383-0774400EDFD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56AE00E2-95C4-47CA-8383-0774400EDFD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56AE00E2-95C4-47CA-8383-0774400EDFD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56AE00E2-95C4-47CA-8383-0774400EDFD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
