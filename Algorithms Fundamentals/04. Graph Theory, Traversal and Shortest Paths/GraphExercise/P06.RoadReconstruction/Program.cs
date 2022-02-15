@@ -32,7 +32,59 @@ namespace P06.RoadReconstruction
 
             ProcessInput(n, e);
 
+            var importantEdges = new List<Edge>();
+
+            foreach (var edge in edges)
+            {
+                var first = edge.First;
+                var second = edge.Second;
+
+                graph[first].Remove(second);
+                graph[second].Remove(first);
+
+                if (HasPath(first, second))
+                {
+                    importantEdges.Add(edge);
+                }
+                else
+                {
+                    graph[first].Add(second);
+                    graph[second].Add(first);
+
+                }
+            }
+
             ;
+        }
+
+        private static bool HasPath(int source, int destination)
+        {
+            var queue = new Queue<int>();
+            queue.Enqueue(source);
+
+            var visited = new HashSet<int>();
+            visited.Add(source);
+
+            while (queue.Count > 0)
+            {
+                var node = queue.Dequeue();
+
+                if (node == destination)
+                {
+                    return true;
+                }
+
+                foreach (var child in graph[node])
+                {
+                    if (!visited.Contains(child))
+                    {
+                        visited.Add(child);
+                        queue.Enqueue(child);
+                    }
+                }
+            }
+
+            return false;
         }
 
         private static void ProcessInput(int n, int e)
