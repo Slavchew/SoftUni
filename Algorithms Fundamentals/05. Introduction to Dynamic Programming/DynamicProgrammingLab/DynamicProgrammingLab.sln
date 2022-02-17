@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01.Fibonacci", "P01.Fibonacci\P01.Fibonacci.csproj", "{FD0B0595-3D8B-40C0-B6CF-A43F9969F60F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01.Fibonacci", "P01.Fibonacci\P01.Fibonacci.csproj", "{FD0B0595-3D8B-40C0-B6CF-A43F9969F60F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02.SubsetSum", "P02.SubsetSum\P02.SubsetSum.csproj", "{21DED6DE-A279-4A05-A2B5-259180844954}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02.SubsetSum", "P02.SubsetSum\P02.SubsetSum.csproj", "{21DED6DE-A279-4A05-A2B5-259180844954}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03.SubsetSumWithRepetition", "P03.SubsetSumWithRepetition\P03.SubsetSumWithRepetition.csproj", "{0D68DD46-EC8D-494E-876C-68357619B24F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04.MoveDownRight", "P04.MoveDownRight\P04.MoveDownRight.csproj", "{33D7B029-B478-41BE-8E83-550C27B62D51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05.LongestCommonSubsequence", "P05.LongestCommonSubsequence\P05.LongestCommonSubsequence.csproj", "{5CFFFAE1-42F2-4252-949D-0D41EFB4126F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{21DED6DE-A279-4A05-A2B5-259180844954}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21DED6DE-A279-4A05-A2B5-259180844954}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21DED6DE-A279-4A05-A2B5-259180844954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D68DD46-EC8D-494E-876C-68357619B24F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D68DD46-EC8D-494E-876C-68357619B24F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D68DD46-EC8D-494E-876C-68357619B24F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D68DD46-EC8D-494E-876C-68357619B24F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33D7B029-B478-41BE-8E83-550C27B62D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33D7B029-B478-41BE-8E83-550C27B62D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33D7B029-B478-41BE-8E83-550C27B62D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33D7B029-B478-41BE-8E83-550C27B62D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CFFFAE1-42F2-4252-949D-0D41EFB4126F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CFFFAE1-42F2-4252-949D-0D41EFB4126F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CFFFAE1-42F2-4252-949D-0D41EFB4126F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CFFFAE1-42F2-4252-949D-0D41EFB4126F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
