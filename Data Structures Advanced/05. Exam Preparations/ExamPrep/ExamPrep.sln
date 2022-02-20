@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.Microsystem", "..\..\..\..\..\SoftUni\Data Structures Advanced (with C#)\05. Exam preparation\01. Microsystem-Skeleton\01.Microsystem\01.Microsystem.csproj", "{1EEE2667-467F-4DB8-A3D9-4949F9BFC547}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.Microsystem.Tests", "..\..\..\..\..\SoftUni\Data Structures Advanced (with C#)\05. Exam preparation\01. Microsystem-Skeleton\01.Microsystem.Tests\01.Microsystem.Tests.csproj", "{4424D788-054D-4795-8359-C7B370F985FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02.VaniPlanning", "..\..\..\..\..\SoftUni\Data Structures Advanced (with C#)\05. Exam preparation\02. VaniPlanning-Skeleton\02.VaniPlanning\02.VaniPlanning.csproj", "{5D23A709-6665-45B5-8B41-CA079E075769}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02.VaniPlanning.Tests", "..\..\..\..\..\SoftUni\Data Structures Advanced (with C#)\05. Exam preparation\02. VaniPlanning-Skeleton\02.VaniPlanning.Tests\02.VaniPlanning.Tests.csproj", "{7D701629-14F1-4CE3-8EF4-DE2A058948D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EEE2667-467F-4DB8-A3D9-4949F9BFC547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EEE2667-467F-4DB8-A3D9-4949F9BFC547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EEE2667-467F-4DB8-A3D9-4949F9BFC547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EEE2667-467F-4DB8-A3D9-4949F9BFC547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4424D788-054D-4795-8359-C7B370F985FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4424D788-054D-4795-8359-C7B370F985FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4424D788-054D-4795-8359-C7B370F985FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4424D788-054D-4795-8359-C7B370F985FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D23A709-6665-45B5-8B41-CA079E075769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D23A709-6665-45B5-8B41-CA079E075769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D23A709-6665-45B5-8B41-CA079E075769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D23A709-6665-45B5-8B41-CA079E075769}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D701629-14F1-4CE3-8EF4-DE2A058948D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D701629-14F1-4CE3-8EF4-DE2A058948D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D701629-14F1-4CE3-8EF4-DE2A058948D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D701629-14F1-4CE3-8EF4-DE2A058948D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27928DCB-B11D-436F-99FA-A30A00590F36}
+	EndGlobalSection
+EndGlobal
