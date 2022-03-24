@@ -1,29 +1,36 @@
 ﻿using System;
+using System.Threading.Tasks;
+
+using SUS.HTTP;
 
 namespace MyFirstMvcApp
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            var server = new HttpServer();
-            server.Start(80);
+            IHttpServer server = new HttpServer();
 
-            server.AddRoute("/", () =>
-            {
+            server.AddRoute("/", HomePage);
+            server.AddRoute("/about", About);
+            server.AddRoute("/users/login", Login);
 
-            });
+            await server.StartAsync(80);
+        }
 
-            server.AddRoute("/about", () =>
-            {
+        static HttpResponse HomePage(HttpRequest request)
+        {
+            throw new NotImplementedException();
+        }
 
-            });
+        static HttpResponse About(HttpRequest request)
+        {
+            throw new NotImplementedException();
+        }
 
-            server.AddRoute("/users/login", () =>
-            {
-
-            });
-
+        static HttpResponse Login(HttpRequest request)
+        {
+            throw new NotImplementedException();
         }
     }
 }
