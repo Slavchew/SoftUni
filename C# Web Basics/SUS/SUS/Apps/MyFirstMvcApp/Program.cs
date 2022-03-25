@@ -14,6 +14,7 @@ namespace MyFirstMvcApp
             server.AddRoute("/", HomePage);
             server.AddRoute("/about", About);
             server.AddRoute("/users/login", Login);
+            server.AddRoute("/favicon.ico", Favicon);
 
             await server.StartAsync(80);
         }
@@ -29,6 +30,11 @@ namespace MyFirstMvcApp
         }
 
         static HttpResponse Login(HttpRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        static HttpResponse Favicon(HttpRequest request)
         {
             throw new NotImplementedException();
         }

@@ -9,7 +9,6 @@ namespace SUS.HTTP
 {
     public class HttpServer : IHttpServer
     {
-        private static int BufferSize = 4096;
         IDictionary<string, Func<HttpRequest, HttpResponse>> routeTable = 
             new Dictionary<string, Func<HttpRequest, HttpResponse>>();
 
@@ -42,7 +41,7 @@ namespace SUS.HTTP
 
             List<byte> data = new List<byte>();
             int position = 0;
-            byte[] buffer = new byte[BufferSize];
+            byte[] buffer = new byte[HttpConstants.BufferSize];
             while (true)
             {
                 int count = await stream.ReadAsync(buffer, position, buffer.Length);
@@ -64,6 +63,24 @@ namespace SUS.HTTP
             var requestAsString = Encoding.UTF8.GetString(data.ToArray());
 
             Console.WriteLine(requestAsString);
+
+            var responseHtml = "<h1>Welcome</h1>";
+
+            var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
+
+            var responseHttp =
+                "HTTP/1.1 200 OK" + HttpConstants.NewLine +
+                "Server: SUS Server 1.0" + HttpConstants.NewLine +
+                "Content-Type: text/html" + HttpConstants.NewLine +
+                "Content-Length: " + responseBodyBytes.Length + HttpConstants.NewLine +
+                HttpConstants.NewLine;
+
+            var responseHeaderBytes = Encoding.UTF8.GetBytes(responseHttp);
+
+            await stream.WriteAsync(responseHeaderBytes, 0, responseHeaderBytes.Length);
+            await stream.WriteAsync(responseBodyBytes, 0, responseBodyBytes.Length);
+
+            tcpClient.Close();
         }
     }
 }
