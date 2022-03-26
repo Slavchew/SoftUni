@@ -4,6 +4,12 @@ namespace SUS.HTTP
 {
     public class Header
     {
+        public Header(string name, string value)
+        {
+            Name = name;
+            Value = value;
+        }
+
         public Header(string headerLine)
         {
             var headerParts = headerLine.Split(": ", 2, StringSplitOptions.None);
@@ -14,5 +20,10 @@ namespace SUS.HTTP
         public string Name { get; set; }
 
         public string Value { get; set; }
+
+        public override string ToString()
+        {
+            return $"{this.Name}: {this.Value}";
+        }
     }
 }
