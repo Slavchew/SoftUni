@@ -2,14 +2,24 @@
 using System.Text;
 
 using SUS.HTTP;
+using SUS.MvcFramework.ViewEngine;
 
 namespace SUS.MvcFramework
 {
     public abstract class Controller
     {
-        public HttpResponse View([CallerMemberName]string viewPath = null)
+        private SusViewEngine viewEngine;
+
+        public Controller()
+        {
+            this.viewEngine = new SusViewEngine();
+        }
+
+        public HttpResponse View(object viewModel = null, [CallerMemberName]string viewPath = null)
         {
             var layuot = System.IO.File.ReadAllText("Views/Shared/_Layout.cshtml");
+            layuot = layuot.Replace("@RenderBody()", "____VIEW_GOES_HERE____");
+            layuot = this.viewEngine.GetHtml(layuot, viewModel);
 
             var viewContent = System.IO.File.ReadAllText(
                 "Views/" + 
@@ -18,7 +28,9 @@ namespace SUS.MvcFramework
                 viewPath + 
                 ".cshtml");
 
-            var responseHtml = layuot.Replace("@RenderBody()", viewContent);
+            viewContent = this.viewEngine.GetHtml(viewContent, viewModel);
+
+            var responseHtml = layuot.Replace("____VIEW_GOES_HERE____", viewContent);
 
             var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
             var response = new HttpResponse("text/html", responseBodyBytes);
