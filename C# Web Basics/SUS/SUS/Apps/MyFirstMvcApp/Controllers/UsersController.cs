@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Text;
-
+﻿
 using SUS.HTTP;
 using SUS.MvcFramework;
 
@@ -19,6 +16,7 @@ namespace MyFirstMvcApp.Controllers
             return this.View();
         }
 
+        [HttpPost]
         public HttpResponse DoLogin(HttpRequest arg)
         {
             // TODO: read Data

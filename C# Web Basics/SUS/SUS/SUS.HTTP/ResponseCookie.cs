@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 
 namespace SUS.HTTP
 {
     public class ResponseCookie : Cookie
     {
-        public ResponseCookie(string name, string value) 
+        public ResponseCookie(string name, string value)
             : base(name, value)
         {
             this.Path = "/";

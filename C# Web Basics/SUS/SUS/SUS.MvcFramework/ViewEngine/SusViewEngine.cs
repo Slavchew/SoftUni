@@ -31,7 +31,7 @@ namespace SUS.MvcFramework.ViewEngine
                 {
                     var modelName = viewModel.GetType().FullName;
                     var genericArguments = viewModel.GetType().GenericTypeArguments;
-                    typeOfModel = modelName.Substring(0, modelName.IndexOf('`')) 
+                    typeOfModel = modelName.Substring(0, modelName.IndexOf('`'))
                         + "<" + string.Join(",", genericArguments.Select(x => x.FullName)) + ">";
                 }
                 else
@@ -82,7 +82,7 @@ namespace ViewNamespace
                     line = line.Remove(atSignLocation, 1);
                     csharpCode.AppendLine(line);
                 }
-                else if (line.TrimStart().StartsWith("{") || 
+                else if (line.TrimStart().StartsWith("{") ||
                         line.TrimStart().StartsWith("}"))
                 {
                     csharpCode.AppendLine(line);
@@ -153,7 +153,7 @@ namespace ViewNamespace
                 var viewType = assembly.GetType("ViewNamespace.ViewClass");
                 var instance = Activator.CreateInstance(viewType);
 
-                return (instance as IView) ?? new ErrorView(new List<string> { "Instance is null!"}, csharpCode);
+                return (instance as IView) ?? new ErrorView(new List<string> { "Instance is null!" }, csharpCode);
             }
             catch (Exception ex)
             {

@@ -15,20 +15,20 @@ namespace SUS.MvcFramework
             this.viewEngine = new SusViewEngine();
         }
 
-        public HttpResponse View(object viewModel = null, [CallerMemberName]string viewPath = null)
+        public HttpResponse View(object viewModel = null, [CallerMemberName] string viewPath = null)
         {
-            var layuot = System.IO.File.ReadAllText("Views/Shared/_Layout.cshtml");
-            layuot = layuot.Replace("@RenderBody()", "____VIEW_GOES_HERE____");
-            layuot = this.viewEngine.GetHtml(layuot, viewModel);
-
             var viewContent = System.IO.File.ReadAllText(
-                "Views/" + 
-                this.GetType().Name.Replace("Controller", string.Empty) + 
-                "/" + 
-                viewPath + 
+                "Views/" +
+                this.GetType().Name.Replace("Controller", string.Empty) +
+                "/" +
+                viewPath +
                 ".cshtml");
 
             viewContent = this.viewEngine.GetHtml(viewContent, viewModel);
+
+            var layuot = System.IO.File.ReadAllText("Views/Shared/_Layout.cshtml");
+            layuot = layuot.Replace("@RenderBody()", "____VIEW_GOES_HERE____");
+            layuot = this.viewEngine.GetHtml(layuot, viewModel);
 
             var responseHtml = layuot.Replace("____VIEW_GOES_HERE____", viewContent);
 
