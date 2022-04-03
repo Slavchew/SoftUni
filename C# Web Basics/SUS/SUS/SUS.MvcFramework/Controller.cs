@@ -15,6 +15,8 @@ namespace SUS.MvcFramework
             this.viewEngine = new SusViewEngine();
         }
 
+        public HttpRequest Request { get; set; }
+
         public HttpResponse View(object viewModel = null, [CallerMemberName] string viewPath = null)
         {
             var viewContent = System.IO.File.ReadAllText(

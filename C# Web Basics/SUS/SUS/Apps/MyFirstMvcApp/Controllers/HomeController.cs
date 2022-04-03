@@ -10,7 +10,7 @@ namespace MyFirstMvcApp.Controllers
     public class HomeController : Controller
     {
         [HttpGet("/")]
-        public HttpResponse Index(HttpRequest request)
+        public HttpResponse Index()
         {
             var viewModel = new IndexViewModel();
             viewModel.CurrentYear = DateTime.UtcNow.Year;
@@ -19,7 +19,7 @@ namespace MyFirstMvcApp.Controllers
             return this.View(viewModel);
         }
 
-        public HttpResponse About(HttpRequest arg)
+        public HttpResponse About()
         {
             return this.View();
         }
