@@ -1,11 +1,11 @@
 ﻿using System;
 
-using MyFirstMvcApp.ViewModels;
+using BattleCards.ViewModels;
 
 using SUS.HTTP;
 using SUS.MvcFramework;
 
-namespace MyFirstMvcApp.Controllers
+namespace BattleCards.Controllers
 {
     public class HomeController : Controller
     {

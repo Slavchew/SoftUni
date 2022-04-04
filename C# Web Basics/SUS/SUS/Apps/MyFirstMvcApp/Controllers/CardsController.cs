@@ -1,11 +1,14 @@
-﻿using BattleCards.Data;
+﻿using System.Linq;
 
-using MyFirstMvcApp.ViewModels;
+using BattleCards.Data;
+using BattleCards.ViewModels;
+
+using BattleCards.ViewModels;
 
 using SUS.HTTP;
 using SUS.MvcFramework;
 
-namespace MyFirstMvcApp.Controllers
+namespace BattleCards.Controllers
 {
     public class CardsController : Controller
     {
@@ -18,6 +21,11 @@ namespace MyFirstMvcApp.Controllers
         public HttpResponse DoAdd()
         {
             var dbContext = new ApplicationDbContext();
+
+            if (this.Request.FormData["name"].Length < 5)
+            {
+                return this.Error("Name should be at least 5 characters long.");
+            }
 
             dbContext.Cards.Add(new Card
             {
@@ -36,7 +44,19 @@ namespace MyFirstMvcApp.Controllers
 
         public HttpResponse All()
         {
-            return View();
+            var db = new ApplicationDbContext();
+
+            var cardsViewModel = db.Cards.Select(x => new CardViewModel
+            {
+                Name = x.Name,
+                Description = x.Description,
+                Attack = x.Attack,
+                Health = x.Health,
+                ImageUrl = x.ImageUrl,
+                Type = x.Keyword
+            }).ToList();
+
+            return View(new AllCardsViewModel { Cards = cardsViewModel });
         }
 
         public HttpResponse Collection()

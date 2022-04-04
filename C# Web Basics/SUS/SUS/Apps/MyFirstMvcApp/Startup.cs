@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using SUS.HTTP;
 using SUS.MvcFramework;
 
-namespace MyFirstMvcApp
+namespace BattleCards
 {
     public class Startup : IMvcApplication
     {
