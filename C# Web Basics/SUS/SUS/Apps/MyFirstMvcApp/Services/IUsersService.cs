@@ -1,6 +1,6 @@
 ﻿namespace BattleCards.Services
 {
-    public interface IUserService
+    public interface IUsersService
     {
         string CreateUser(string username, string email, string password);
 

@@ -13,12 +13,13 @@ namespace SUS.MvcFramework
         public static async Task CreateHostAsync(IMvcApplication application, int port = 80)
         {
             List<Route> routeTable = new List<Route>();
+            IServiceCollection serviceCollection = new ServiceCollection();
+
+            application.ConfigureServices(serviceCollection);
+            application.Configure(routeTable);
 
             AutoRegisterStaticFiles(routeTable);
-            AutoRegisterRoutes(routeTable, application);
-
-            application.ConfigureServices();
-            application.Configure(routeTable);
+            AutoRegisterRoutes(routeTable, application, serviceCollection);
 
             Console.WriteLine("All registered routes:");
             foreach (var route in routeTable)
@@ -31,7 +32,8 @@ namespace SUS.MvcFramework
             await server.StartAsync(port);
         }
 
-        private static void AutoRegisterRoutes(List<Route> routeTable, IMvcApplication application)
+        private static void AutoRegisterRoutes(List<Route> routeTable, IMvcApplication application,
+            IServiceCollection serviceCollection)
         {
             var contollerTypes = application.GetType().Assembly.GetTypes()
                 .Where(x => x.IsClass && !x.IsAbstract && x.IsSubclassOf(typeof(Controller)));
@@ -64,7 +66,7 @@ namespace SUS.MvcFramework
 
                     routeTable.Add(new Route(url, httpMethod, (request) =>
                     {
-                        var instance = Activator.CreateInstance(contollerType) as Controller;
+                        var instance = serviceCollection.CreateInstance(contollerType) as Controller;
                         instance.Request = request;
                         var response = method.Invoke(instance, new object[] { }) as HttpResponse;
                         return response;
