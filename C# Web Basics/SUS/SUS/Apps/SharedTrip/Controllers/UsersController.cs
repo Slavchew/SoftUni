@@ -19,12 +19,22 @@ namespace SharedTrip.Controllers
 
         public HttpResponse Login()
         {
+            if (this.IsUserSignedIn())
+            {
+                return this.Redirect();
+            }
+
             return this.View();
         }
 
         [HttpPost]
         public HttpResponse Login(LoginInputModel input)
         {
+            if (this.IsUserSignedIn())
+            {
+                return this.Redirect();
+            }
+
             var userId = this.usersService.GetUserId(input.Username, input.Password);
             if (userId == null)
             {
@@ -37,12 +47,22 @@ namespace SharedTrip.Controllers
 
         public HttpResponse Register()
         {
+            if (this.IsUserSignedIn())
+            {
+                return this.Redirect();
+            }
+
             return this.View();
         }
 
         [HttpPost]
         public HttpResponse Register(RegisterInputModel input)
         {
+            if (this.IsUserSignedIn())
+            {
+                return this.Redirect();
+            }
+
             if (string.IsNullOrEmpty(input.Username) || input.Username.Length < 5 || input.Username.Length > 20)
             {
                 return this.Error("Username should be between 5 and 20 characters long.");
@@ -79,6 +99,11 @@ namespace SharedTrip.Controllers
 
         public HttpResponse Logout()
         {
+            if (!this.IsUserSignedIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
+
             this.SignOut();
             return this.Redirect();
         }

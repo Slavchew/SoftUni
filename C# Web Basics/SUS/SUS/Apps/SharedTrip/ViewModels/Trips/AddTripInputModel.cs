@@ -8,7 +8,7 @@ namespace SharedTrip.ViewModels.Trips
 
         public string EndPoint { get; set; }
 
-        public DateTime DepartureTime { get; set; }
+        public string DepartureTime { get; set; }
 
         public string ImagePath { get; set; }
 
