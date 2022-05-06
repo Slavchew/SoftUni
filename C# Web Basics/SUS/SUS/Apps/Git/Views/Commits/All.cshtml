@@ -18,14 +18,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="table-light">
-                                <th scope="row">ASP.NET Core Template</th>
-                                <td>Introduce new functionality</td>
-                                <td>22/10/2020 08:45</td>
-                                <td>
-                                    <a class="btn btn-block btn-primary text-white mb-3" href="/Commits/Delete">Delete</a>
-                                </td>
-                            </tr>
+                            @foreach (Git.ViewModels.Commits.CommitViewModel item in Model)
+                            {
+                                <tr class="table-light">
+                                    <th scope="row">@item.Repository</th>
+                                    <td>@item.Description</td>
+                                    <td>@item.CreatedOn</td>
+                                    <td>
+                                        <a class="btn btn-block btn-primary text-white mb-3" href="/Commits/Delete?id=@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>
