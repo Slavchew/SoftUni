@@ -30,6 +30,21 @@ namespace MovieDeckApi.Controllers
             return View();
         }
 
+        public IActionResult AjaxDemo()
+        {
+            return this.View();
+        }
+
+        public IActionResult AjaxDemoData()
+        {
+            return this.Json(new[]
+            {
+                new {Name = "Alex2", Age = 19},
+                new {Name = "Ico2", Age = 20},
+                new {Name = "Kurta2", Age = 10},
+            });
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

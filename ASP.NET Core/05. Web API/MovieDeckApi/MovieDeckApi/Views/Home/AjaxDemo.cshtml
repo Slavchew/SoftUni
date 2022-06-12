@@ -1,0 +1,36 @@
+﻿<h1>Hello AJAX</h1>
+
+<table id="DataTable" class="table table-striped">
+    <tr>
+        <td>Alex</td>
+        <td>18</td>
+    </tr>
+    <tr>
+        <td>Hristo</td>
+        <td id="ageHristo">18</td>
+    </tr>
+</table>
+
+<button onclick="RefreshData()" class="btn btn-primary">Click me</button>
+
+<script>
+    function RefreshData() {
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+
+                let age = Number(document.getElementById('ageHristo').innerHTML);
+                    age++;
+                    document.getElementById('ageHristo').innerHTML = age;
+
+                //let people = JSON.parse(this.responseText);
+                //for (let i = 0; i < people.length; i++) {
+                //    let person = people[i];
+                //}
+            }
+        };
+
+        xhr.open("GET", "/Home/AjaxDemoData");
+        xhr.send();
+    }
+</script>
