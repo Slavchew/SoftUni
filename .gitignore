@@ -531,6 +531,13 @@ FodyWeavers.xsd
 .idea/
 *.sln.iml
 
+# Custom ignores
+appsettings.Production.json
+**/wwwroot/lib/
+*.min.css
+*.min.js
+
+
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
