@@ -1,0 +1,10 @@
+﻿@*@page "/softuni/{name:regex(^[A-Z]{{2}}[A-Z]{{2}}$)}"*@
+@*@page "softuni/{name:cyrillic}" If miss / sign it will be avaiable at Test/{route}  *@
+@page "/softuni/{name:cyrillic}"
+@model RazorPagesExample.Pages.TestModel
+@{
+    ViewData["Title"] = "Test";
+}
+
+<h1>Test</h1>
+<h1>@Model.Name</h1>
