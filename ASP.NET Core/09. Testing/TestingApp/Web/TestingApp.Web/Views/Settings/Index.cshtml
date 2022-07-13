@@ -1,0 +1,20 @@
+﻿@model TestingApp.Web.ViewModels.Settings.SettingsListViewModel
+
+@{
+    this.ViewData["Title"] = "Settings";
+}
+
+<h1>@this.ViewData["Title"]</h1>
+
+@foreach (var setting in this.Model.Settings)
+{
+    <div>@setting.Id: @setting.NameAndValue</div>
+}
+
+<a asp-action="InsertSetting" class="btn btn-primary">Insert new</a>
+
+@section Scripts {
+    <script>
+        document.getElementsByTagName("h1")[0].remove();
+    </script>
+}

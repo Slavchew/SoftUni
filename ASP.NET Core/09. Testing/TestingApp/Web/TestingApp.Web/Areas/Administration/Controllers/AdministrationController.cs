@@ -1,0 +1,14 @@
+﻿namespace TestingApp.Web.Areas.Administration.Controllers
+{
+    using TestingApp.Common;
+    using TestingApp.Web.Controllers;
+
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+    [Area("Administration")]
+    public class AdministrationController : BaseController
+    {
+    }
+}
