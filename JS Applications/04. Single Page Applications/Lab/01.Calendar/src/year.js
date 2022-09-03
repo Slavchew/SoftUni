@@ -1,8 +1,8 @@
-import { showMonths } from './month.js';
-
 const yearsTable = document.getElementById('years');
 
 export function showYearsTable() {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(x => x.style.display = 'none');
     yearsTable.style.display = 'block';
 }
 
@@ -12,6 +12,11 @@ export function onSelectYear(targetYearElement) {
             ? targetYearElement.firstElementChild.textContent
             : targetYearElement.textContent;
 
-        showMonths(year);
+        showYear(year);
     }
+}
+
+export function showYear(year) {
+    document.getElementById(`year-${year}`).style.display = 'block';
+    document.getElementById('years').style.display = 'none';
 }
