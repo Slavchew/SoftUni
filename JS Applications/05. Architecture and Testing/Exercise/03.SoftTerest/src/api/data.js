@@ -13,9 +13,9 @@ export async function getById(id) {
 }
 
 export async function createIdea(idea) {
-    return api.post('data/ideas', idea);
+    return api.post('/data/ideas', idea);
 }
 
 export async function deleteById(id) {
-    return api.del('data/ideas/' + id);
+    return api.del('/data/ideas/' + id);
 }

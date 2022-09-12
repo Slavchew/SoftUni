@@ -14,7 +14,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light ">
         <div class="container">
             <a class="navbar-brand" href="">
-                <img src="./images/idea.png" alt="">
+                <img id="homeLink" src="./images/idea.png" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,19 +23,19 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="">Dashboard</a>
+                        <a id="catalogLink" class="nav-link" href="">Dashboard</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="">Create</a>
+                    <li class="nav-item active user">
+                        <a id="createLink" class="nav-link" href="">Create</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Logout</a>
+                    <li class="nav-item user">
+                        <a id="logoutBtn" class="nav-link" href="">Logout</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Login</a>
+                    <li class="nav-item guest">
+                        <a id="loginLink" class="nav-link" href="">Login</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Register</a>
+                    <li class="nav-item guest">
+                        <a id="registerLink" class="nav-link" href="">Register</a>
                     </li>
                 </ul>
             </div>
@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="bottom text-center">
-                <a class="btn btn-secondary btn-lg " href="">Get Started</a>
+                <a id="getStartedLink" class="btn btn-secondary btn-lg " href="">Get Started</a>
             </div>
         </div>
 
@@ -74,18 +74,17 @@
                     </div>
                     <div class="form-label-group">
                         <label for="email">Email</label>
-                        <input type="text" id="email" name="email" class="form-control" placeholder="Email" required=""
+                        <input type="text" id="email" name="email" class="form-control" placeholder="Email" 
                             autofocus="">
                     </div>
                     <div class="form-label-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" class="form-control" placeholder="Password"
-                            required="">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Password">
                     </div>
                     <div class="form-label-group">
                         <label for="inputRepeatPassword">Repeat Password</label>
                         <input type="password" id="inputRepeatPassword" name="repeatPassword" class="form-control"
-                            placeholder="Repeat Password" required="">
+                            placeholder="Repeat Password">
                     </div>
                     <button class="btn btn-lg btn-dark btn-block" type="submit">Sign Up</button>
                     <div class="text-center mb-4">
@@ -129,48 +128,11 @@
         </div>
 
         <div id="dashboard-holder">
-            <div class="card overflow-hidden current-card details" style="width: 20rem; height: 18rem;">
-                <div class="card-body">
-                    <p class="card-text">Dinner Recipe</p>
-                </div>
-                <img class="card-image" src="./images/dinner.jpg" alt="Card image cap">
-                <a class="btn" href="">Details</a>
-            </div>
-            <div class="card overflow-hidden current-card details" style="width: 20rem; height: 18rem;">
-                <div class="card-body">
-                    <p class="card-text">4 easy DIY ideas to try!</p>
-                </div>
-                <img class="card-image" src="./images/brightideacropped.jpg" alt="Card image cap">
-                <a class="btn" href="">Details</a>
-            </div>
-            <div class="card overflow-hidden current-card details" style="width: 20rem; height: 18rem;">
-                <div class="card-body">
-                    <p class="card-text">Best Pilates Workouts to Do at Home</p>
-                </div>
-                <img class="card-image" src="./images/best-pilates-youtube-workouts-2__medium_4x3.jpg"
-                    alt="Card image cap">
-                <a class="btn" href="">Details</a>
-            </div>
-            <h1>No ideas yet! Be the first one :)</h1>
+            <!-- Catalog page -->
         </div>
 
         <div id="detailsPage" class="container home some">
-            <img class="det-img" src="./images/dinner.jpg" />
-            <div class="desc">
-                <h2 class="display-5">Dinner Recipe</h2>
-                <p class="infoType">Description:</p>
-                <p class="idea-description">There are few things as comforting as heaping bowl of pasta at the end of a
-                    long
-                    day. With so many easy pasta recipes out there, there's something for every palate to love. That's
-                    why
-                    pasta
-                    makes such a quick, easy dinner for your family—it's likely to satisfy everyone's cravings, due to
-                    its
-                    versatility.</p>
-            </div>
-            <div class="text-center">
-                <a class="btn detb" href="">Delete</a>
-            </div>
+            <!-- Details page -->
         </div>
 
         <div id="createPage" class="container home wrapper  my-md-5 pl-md-5">
@@ -185,17 +147,15 @@
                     <div class="form-label-group">
                         <label for="ideaTitle">Title</label>
                         <input type="text" id="ideaTitle" name="title" class="form-control"
-                            placeholder="What is your idea?" required="" autofocus="">
+                            placeholder="What is your idea?" autofocus="">
                     </div>
                     <div class="form-label-group">
                         <label for="ideaDescription">Description</label>
-                        <textarea type="text" name="description" class="form-control" placeholder="Description"
-                            required=""></textarea>
+                        <textarea type="text" name="description" class="form-control" placeholder="Description"></textarea>
                     </div>
                     <div class="form-label-group">
                         <label for="inputURL">Add Image</label>
-                        <input type="text" id="inputURL" name="imageURL" class="form-control" placeholder="Image URL"
-                            required="">
+                        <input type="text" id="inputURL" name="imageURL" class="form-control" placeholder="Image URL">
 
                     </div>
                     <button class="btn btn-lg btn-dark btn-block" type="submit">Create</button>
