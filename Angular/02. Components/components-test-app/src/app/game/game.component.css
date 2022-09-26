@@ -1,0 +1,11 @@
+h2 {
+    color: red;
+}
+
+li {
+    display: inline-block;
+}
+
+.game-price {
+    color: aquamarine;
+}
