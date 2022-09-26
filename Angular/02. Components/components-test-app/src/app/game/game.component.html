@@ -1,0 +1,17 @@
+<ul>
+    <li *ngFor="let game of games">
+        Game: {{game.title}}
+
+        <span [class.game-price]="shouldPriceBeColorized" *ngIf="game.price > 10">
+            Price: {{game.price}}
+        </span>
+
+        <span>
+            <img [src]="game.img" alt="" width="300px">
+        </span>
+    </li>
+</ul>
+
+<button (click)="handleExpandContentClick()">
+    {{shouldPriceBeColorized ? 'Uncolor Price' : 'Color Price'}}
+</button>
