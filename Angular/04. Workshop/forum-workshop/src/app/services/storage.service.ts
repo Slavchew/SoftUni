@@ -24,7 +24,7 @@ export function storageFactory(platformId: string): any {
         return new ServerStorage();
     }
 
-    return null;
+    throw new Error('No implementation for this provider: ' + platformId)
 }
 
 export const storageServiceProvider: Provider = {
@@ -33,7 +33,6 @@ export const storageServiceProvider: Provider = {
     deps: [PLATFORM_ID]
 } 
 
-@Injectable()
 export class BrowserStorage {
     localStorage = localStorage;
 
@@ -58,7 +57,6 @@ export class BrowserStorage {
     }
 }
 
-@Injectable()
 export class ServerStorage {
     localStorage = {
         data: {},
